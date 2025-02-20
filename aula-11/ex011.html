@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        body {
+            background-color: #009440;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        main {
+            position: relative;
+            width: 100vw;
+            height: 80vh;
+        }
+
+        div#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        div.grupo-nome {
+            position: relative;
+        }
+
+        label {
+            color: white;
+            padding: 0 5px;
+            position: absolute;
+            top: 50%;
+            left: 1em;
+            pointer-events: none;
+            transform: translateY(-50%);
+            transition: .3s;
+        }
+
+        input#pais {
+            color: white;
+            border: 2px solid green;
+            background-color: transparent;
+            border-radius: 5px;
+            width: 300px;
+            height: 60px;
+            padding: 0 1rem;
+            outline: none;
+        }
+
+        input#pais:focus~label,
+        input#pais:valid~label {
+            top: 0;
+            background-color: #009440;
+            font-size: 0.7rem;
+        }
+
+        div#cont {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        input#btn {
+            background-color: blue;
+            border-radius: 5px;
+            width: 200px;
+            padding: 5px;
+        }
+
+        p {
+            text-align: center;
+        }
+       
+        a {
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            width: 200px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minha Nacionalidade</h1>
+    </header>
+    <main>
+        <div id="container">
+            <div class="grupo-nome">
+                <input type="text" name="natural" id="pais" required>
+                <label for="pais">País</label>
+            </div>
+            <div id="cont">
+                <input id="btn" type="button" value="Verificar" onclick="nacionalidade()">
+                <div id="resultado"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://github.com/fabiojunio12" target="_blank">
+            <p>©FábioJunio2025</p>
+        </a>
+    </footer>
+
+    <script>
+        function nacionalidade() {
+            var nat = window.document.querySelector('input#pais');
+            var res = window.document.querySelector('div#resultado');
+
+            res.innerHTML = `<p>Vivendo no ${nat.value}</p>`;
+
+            if (nat.value.toUpperCase() == 'BRASIL') {
+                res.innerHTML += `<p>Você é <strong>Brasileiro!</strong></p>`
+            } else {
+                res.innerHTML += `<p><strong>Estrangeiro!</strong></p>`;
+            }
+        }
+    </script>
+</body>
+</html>
