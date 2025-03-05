@@ -1,12 +1,19 @@
-function geradorTabuada() {
-    let numtxt = document.querySelector('input#num');
-    let lista = document.querySelector('ul#lista');
+function tabuada() {
+    let num = document.getElementById('num');
+    let tab = document.getElementById('seltab');
 
-    lista.innerHTML = '';
-
-    let num = Number(numtxt.value);
-    for (let c = 0;c <= 10; c++) {
-        res = num * c;
-        lista.innerHTML += `<li style='list-style: none'>${num} x ${c} = ${res}</li>`
+    if (num.value.length == 0) {
+        window.alert('Por favor, digite um número!');
+    } else {
+        let n = Number(num.value);
+        let c = 1;
+        tab.innerHTML = '';
+        while (c <= 10) {
+            let item = document.createElement('option');
+            item.text = `${n} x ${c} = ${n*c}`;
+            item.value = `tab${c}`;
+            tab.appendChild(item);
+            c++;
+        }
     }
 }
