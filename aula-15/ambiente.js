@@ -1,6 +1,6 @@
 let num = [3, 5, 10, 6, 8];
-num.sort((a, b) => a - b);
 num.push(1);
+num.sort((a, b) => a - b);
 
 console.log(num);
 console.log(`o vetor tem ${num.length} posições.`);
