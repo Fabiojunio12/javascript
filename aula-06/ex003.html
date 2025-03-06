@@ -21,11 +21,12 @@
     <p>Já me livrei da maldição!!</p>
 
     <script>
-        var n1 = Number(window.prompt('Digite primeiro número: '))
-        var n2 = Number(window.prompt('Digite segundo número: '))
-        var s = n1 + n2
+        var numeros = [];
+        numeros[0] = Number(window.prompt('Digite primeiro número: '))
+        numeros[1] = Number(window.prompt('Digite segundo número: '))
+        var s = numeros[0] + numeros[1]
 
-        window.alert(`A soma entre os valores ${n1} e ${n2} é ${s}.`)
+        window.alert(`A soma entre os valores ${numeros[0]} e ${numeros[1]} é ${s}.`)
         /*
         (Number + Number) para a adição
         (String + String) para concatenação
