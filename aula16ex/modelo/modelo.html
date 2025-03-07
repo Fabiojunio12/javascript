@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Exercícios</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Título</h1>
+    </header>
+    <section>
+        <div>
+            <p>
+                <label for="numeros">Número entre 1 - 100:</label>
+                <input type="number" name="numeros" id="numeros">
+                <input type="button" value="Adicionar" onclick="adicionar()">
+            </p>
+        </div>
+        <div>
+            <select name="ressel" id="ressel"size=10></select>
+            <p>
+                <input type="button" value="Finalizar" onclick="finalizar()">
+            </p>
+            <div id="res">
+
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; FábioJunio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
