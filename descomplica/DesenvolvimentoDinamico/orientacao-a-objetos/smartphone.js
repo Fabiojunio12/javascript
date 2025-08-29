@@ -1,4 +1,4 @@
-class smartphone {
+class Smartphone {
     constructor(menoriaInterna, menoriaRam, versaoAndroid) {
         this._menoriaInterna = menoriaInterna;
         this._menoriaRam = menoriaRam;
@@ -35,7 +35,18 @@ class smartphone {
     }
 };
 
-const motoG52 = new smartphone(128, 4, 12);
+const motoG52 = new Smartphone(128, 4, 12);
 console.log(motoG52.descrever());
-console.log(motoG52._versaoAndroid);
-motoG52._versaoAndroid(13);
+console.log(motoG52.versaoAndroid);
+motoG52.versaoAndroid = 13;
+console.log(motoG52.descrever());
+
+
+let listaCaracteristica = new Array();
+listaCaracteristica.push(64, 4, 9, 10);
+listaCaracteristica.pop();
+console.log(listaCaracteristica);
+
+let oneMacro = new Smartphone(listaCaracteristica[0], listaCaracteristica[1], listaCaracteristica[2]);
+
+console.log(oneMacro.descrever());
