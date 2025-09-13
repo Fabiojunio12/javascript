@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 6</title>
+</head>
+<body>
+    <script>
+        let arrayNumeros = [];
+
+        // Entrada de dados
+        let quantidadeNumero = Number(prompt("Quantos números você quer comparar? "));
+
+        for (let i = 1; i <= quantidadeNumero; i++) {
+            let numero = Number(prompt(`Digite o número ${i}: `));
+            arrayNumeros.push(numero);
+        }
+
+        // processamento de dados
+        let numeroMaior = arrayNumeros[0];
+        function encontrarMaior(arrayNumeros) {
+            for (chave in arrayNumeros) {
+                if (arrayNumeros[chave] >= numeroMaior) {
+                    numeroMaior = arrayNumeros[chave];
+                }
+            }
+            return numeroMaior;
+        }
+
+        // Saída de dados
+        console.log(`O número maior é ${encontrarMaior(arrayNumeros)}`);
+    </script>
+</body>
+</html>
