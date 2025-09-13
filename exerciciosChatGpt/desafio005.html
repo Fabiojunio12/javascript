@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 5</title>
+</head>
+<body>
+    <script>
+        // Entrada de dados
+        let numero = Number(prompt("Digite um número qualquer: "));
+
+        // Processamento de dados
+        function verificarParidade(numero) {
+            if (numero % 2 === 0) {
+                return "Par";
+            } else {
+                return "Impar";
+            }
+        };
+
+        // Saída de dados
+        console.log(`O número ${numero} é ${verificarParidade(numero)}`);
+    </script>
+</body>
+</html>
