@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 4</title>
+</head>
+<body>
+    <script>
+        // Entrada de dados
+        let idade = Number(prompt("Digite uma idade: "));
+
+        // Processamento de dados
+        let categoria;
+        if ((idade >= 0) && (idade <= 12)) {
+            categoria = "Criança";
+        } else if (idade <= 17) {
+            categoria = "Adolescente";
+        } else if (idade <= 59) {
+            categoria = "Adulto";
+        } else {
+            categoria = "Idoso"
+        };
+
+        // Saída de dados
+        console.log(`Essa pessoa é considerada: ${categoria}.`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+</head>
+<body>
+    <script>
+        // Entrada de dados
+        let numero1 = Number(prompt("Digite o primeiro número: "));
+        let numero2 = Number(prompt("Digite o segundo número: "));
+        let numero3 = Number(prompt("Digite o terceiro número: "));
+
+        // processamento de dados
+        let maiorNumero;
+        if ((numero1 => numero2) && (numero1 => numero3)) {
+            maiorNumero = numero1;
+        } else if ((numero2 => numero1) && (numero2 => numero3)) {
+            maiorNumero = numero2;
+        } else {
+            maiorNumero = numero3;
+        }
+
+        // Saída de dados
+        console.log(`O maior número é ${maiorNumero}.`);
+    </script>
+</body>
+</html>
