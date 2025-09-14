@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 7</title>
+</head>
+<body>
+    <script>
+        // Entrada de dados
+        let listaNotas = [];
+        let quantidadeAlunos = Number(prompt("Quantos alunos quer cadastrar: "));
+        
+        for (let i = 1; i <= quantidadeAlunos; i++) {
+            let nota = Number(prompt("Digite a nota do aluno" + i + ": "))
+            listaNotas.push(nota);
+        }
+
+        // processamento de dados
+        let c = 1;
+        function classificarNotas(listaNotas) {
+            for (let nota of listaNotas) {
+                if (nota < 5) {
+
+                    console.log(`Aluno ${c}: Nota ${nota} -> Situação: Reprovado`);
+
+                } else if (nota < 7) {
+
+                    console.log(`Aluno ${c}: Nota ${nota} -> Situação: Recuperação.`);
+
+                } else if (nota <= 10){
+                    console.log(`Aluno ${c}: Nota ${nota} -> Situação: Aprovado.`);
+                } else {
+                    console.log(`Essa nota fora do intervalo entre 0 e 10.`)
+                }
+                c++;
+            }
+        }
+
+        // Saída de dados
+        classificarNotas(listaNotas);
+
+    </script>
+</body>
+</html>
