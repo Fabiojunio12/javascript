@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 9</title>
+</head>
+<body>
+    <script>
+        // Entrada de dados
+        let quantidadeAlunos = Number(prompt("Quantidade de alunos para cadastro: "));
+        let listaAlunos = [];
+
+        let c = 1;
+        while (c <= quantidadeAlunos) {
+            let nome = prompt("Qual nome: ");
+            let nota = Number(prompt(`Qual a nota de ${nome}: `));
+            listaAlunos.push({"nome": nome, "nota": nota});
+            c++;
+        }
+
+        // processamento de dados
+        function classificarNota(nota) {
+            if ((nota >= 0) && (nota < 10)) {
+                if (nota < 5) {
+                    return "Reprovado"
+                } else if (nota < 7) {
+                    return "Recuperação"
+                } else {
+                    return "Aprovado"
+                };
+            } else {
+                return "Nota INVÀLIDA!";
+            };
+        };
+
+        // Saída da dados
+        listaAlunos.forEach(aluno =>
+            console.log(`Aluno: ${aluno.nome} | Nota: ${aluno.nota.toFixed(1)} | Situação: ${classificarNota(aluno.nota)}`)
+        );
+    </script>
+</body>
+</html>
