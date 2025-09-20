@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 8</title>
+</head>
+<body>
+    <script>
+        // Entrada de dados
+        let quantidadeAlunos = Number(prompt("Quantos alunos:"));
+
+        let arrayNotas = [];
+        for (let i = 1; i <= quantidadeAlunos; i++) {
+            let nota = Number(prompt(`Qual a nota do aluno ${i}:`));
+            arrayNotas.push(nota);
+        }
+
+        // Processamento de dados
+        function calcularMedia(arrayNotas) {
+            let valorSoma = 0;
+            for (nota of arrayNotas) {
+                valorSoma += nota;
+            }
+
+            let media = valorSoma / arrayNotas.length;
+            return media.toFixed(2);
+        };
+
+        // Saída de dados
+        let mediaTurma = calcularMedia(arrayNotas);
+        if (mediaTurma < 5) {
+            console.log(`Média da turma: ${mediaTurma}, Turma reprovada`);
+        } else if (mediaTurma < 7) {
+            console.log(`Média da turma: ${mediaTurma}, Turma em recuperação`);
+        } else {
+            console.log(`Média da turma: ${mediaTurma}, Turma aprovada`);
+        };
+    </script>
+</body>
+</html>
