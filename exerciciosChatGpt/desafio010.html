@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 10</title>
+</head>
+<body>
+    <script>
+        // Entrada de dados
+        let quantidadeAlunos = Number(prompt("Qual vai ser a quantidade de alunos no cadastro: "));
+
+        // Função para cadastrar alunos
+        const listaAlunos = [];
+        function cadastrarAluno(nome, nota) {
+            listaAlunos.push({"nome": nome, "nota": nota});
+        }
+
+        // Cadastrando alunos
+        let c = 1;
+        while (c <= quantidadeAlunos) {
+            let nome = prompt("Qual o nome: ");
+            let nota = Number(prompt(`Qual a nota da(o) ${nome}`));
+            cadastrarAluno(nome, nota);
+            c++;
+        }
+
+        // Processamento de dados
+        // Função média da turna
+        function mediaTurma(listaAlunos) {
+            let resultadoTotal = 0;
+            listaAlunos.forEach(alunos =>
+                resultadoTotal += alunos.nota
+            );
+            let media = resultadoTotal / listaAlunos.length;
+            return media;
+        }
+
+        // Função de maior nota
+        function maiorNota(listaAluno) {
+            let notaMaxima = listaAluno[0].nota;
+            for (let i = 0; i < listaAluno.length; i++) {
+                if (listaAluno[i].nota >= notaMaxima) {
+                    notaMaxima = listaAluno[i].nota;
+                }
+            };
+            return notaMaxima;
+        };
+
+        // Função de menor nota
+        function menorNota(listaAluno) {
+            let notaMinima = listaAluno[0].nota;
+            for (let i = 0; i < listaAluno.length; i++) {
+                if (listaAluno[i].nota <= notaMinima) {
+                    notaMinima = listaAluno[i].nota;
+                };
+            };
+            return notaMinima;
+        };
+
+        // Saída de dados
+        // Função de saída
+        function saidaDados(listaAluno) {
+            listaAluno.forEach(aluno => 
+                console.log(`Aluno: ${aluno.nome} | nota: ${aluno.nota}`)
+            );
+            console.log(`\nMédia da turma: ${mediaTurma(listaAluno)} | Maior nota: ${maiorNota(listaAluno)} | Menor nota: ${menorNota(listaAluno)}`);
+        }
+
+        if (listaAlunos.length === 0) {
+            console.log("Nenhum aluno cadastrado.");
+        } else {
+            saidaDados(listaAlunos);
+        };
+    </script>
+</body>
+</html>
