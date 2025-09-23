@@ -20,8 +20,15 @@
         let c = 1;
         while (c <= quantidadeAlunos) {
             let nome = prompt("Qual o nome: ");
-            let nota = Number(prompt(`Qual a nota da(o) ${nome}`));
-            cadastrarAluno(nome, nota);
+            while (true) {
+                let nota = Number(prompt(`Qual a nota da(o) ${nome}`));
+                if ((nota > 10) || (nota < 0)) {
+                    alert(`Nota digitada ${nota}, valores aceitos só entre 0 e 10.`);
+                } else {
+                    cadastrarAluno(nome, nota);
+                    break;
+                }
+            }
             c++;
         }
 
@@ -33,7 +40,7 @@
                 resultadoTotal += alunos.nota
             );
             let media = resultadoTotal / listaAlunos.length;
-            return media;
+            return media.toFixed(1);
         }
 
         // Função de maior nota
@@ -62,13 +69,13 @@
         // Função de saída
         function saidaDados(listaAluno) {
             listaAluno.forEach(aluno => 
-                console.log(`Aluno: ${aluno.nome} | nota: ${aluno.nota}`)
+                alert(`Aluno: ${aluno.nome} | nota: ${aluno.nota}`)
             );
-            console.log(`\nMédia da turma: ${mediaTurma(listaAluno)} | Maior nota: ${maiorNota(listaAluno)} | Menor nota: ${menorNota(listaAluno)}`);
+            alert(`\nMédia da turma: ${mediaTurma(listaAluno)} | Maior nota: ${maiorNota(listaAluno)} | Menor nota: ${menorNota(listaAluno)}`);
         }
 
         if (listaAlunos.length === 0) {
-            console.log("Nenhum aluno cadastrado.");
+            alert("Nenhum aluno cadastrado.");
         } else {
             saidaDados(listaAlunos);
         };
